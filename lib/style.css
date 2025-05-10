@@ -1,0 +1,84 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+}
+
+header {
+  background-color: #262626;
+  padding: 20px;
+  text-align: center;
+}
+
+nav a {
+  color: #ccc;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+main {
+  padding: 20px;
+  text-align: center;
+}
+
+.main-img {
+  width: 100%;
+  max-width: 600px;
+  margin: 15px 0;
+  border-radius: 8px;
+}
+
+footer {
+  background-color: #262626;
+  padding: 10px;
+  text-align: center;
+}
+/* Анімація для зображень */
+.main-img {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* Анімація для заголовків */
+h2, h3 {
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: slideIn 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+/* Анімація кнопок */
+button {
+  padding: 10px 20px;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background-color: #666;
+}
+
+/* Ключові кадри */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

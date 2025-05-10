@@ -1,0 +1,125 @@
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Тест: Що ти знаєш про чудовиськ?</title>
+  <link rel="stylesheet" href="lib/style.css">
+  <style>
+    .question { margin-bottom: 20px; }
+    .result { font-weight: bold; margin-top: 20px; color: #ffcc00; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Тест про чудовиськ світу Відьмака</h1>
+    <nav>
+      <a href="index.html">Головна</a>
+      <a href="creatures.html">Чудовиська</a>
+      <a href="locations.html">Локації</a>
+      <a href="quiz.html">Тест</a>
+    </nav>
+  </header>
+
+  <main>
+    <form id="quizForm">
+      <div class="question">
+        <p>1. Яке чудовисько є типом вампіра?</p>
+        <label><input type="radio" name="q1" value="b"> Брукса</label><br>
+        <label><input type="radio" name="q1" value="a"> Грифон</label><br>
+        <label><input type="radio" name="q1" value="c"> Доплер</label>
+      </div>
+
+      <div class="question">
+        <p>2. Хто може копіювати зовнішність інших?</p>
+        <label><input type="radio" name="q2" value="c"> Доплер</label><br>
+        <label><input type="radio" name="q2" value="a"> Стрига</label><br>
+        <label><input type="radio" name="q2" value="b"> Кикимора</label>
+      </div>
+
+      <div class="question">
+        <p>3. Яке чудовисько мешкає біля води?</p>
+        <label><input type="radio" name="q3" value="a"> Утопець</label><br>
+        <label><input type="radio" name="q3" value="b"> Лішець</label><br>
+        <label><input type="radio" name="q3" value="c"> Базиліск</label>
+      </div>
+
+      <div class="question">
+        <p>4. Хто нападає в полях у середині дня?</p>
+        <label><input type="radio" name="q4" value="a"> Полуденниця</label><br>
+        <label><input type="radio" name="q4" value="b"> Екимма</label><br>
+        <label><input type="radio" name="q4" value="c"> Вурдалак</label>
+      </div>
+
+      <div class="question">
+        <p>5. Хто з цих істот — гігантський лісовий дух?</p>
+        <label><input type="radio" name="q5" value="a"> Лішець</label><br>
+        <label><input type="radio" name="q5" value="b"> Доплер</label><br>
+        <label><input type="radio" name="q5" value="c"> Джінн</label>
+      </div>
+
+      <div class="question">
+        <p>6. Який монстр є хижою рослиною?</p>
+        <label><input type="radio" name="q6" value="a"> Археспора</label><br>
+        <label><input type="radio" name="q6" value="b"> Кокатрикс</label><br>
+        <label><input type="radio" name="q6" value="c"> Кикимора</label>
+      </div>
+
+      <div class="question">
+        <p>7. Який вампір зображається як приваблива жінка?</p>
+        <label><input type="radio" name="q7" value="a"> Брукса</label><br>
+        <label><input type="radio" name="q7" value="b"> Стрига</label><br>
+        <label><input type="radio" name="q7" value="c"> Альгуль</label>
+      </div>
+
+      <div class="question">
+        <p>8. Яке чудовисько має пташині крила та тіло лева?</p>
+        <label><input type="radio" name="q8" value="a"> Грифон</label><br>
+        <label><input type="radio" name="q8" value="b"> Віверна</label><br>
+        <label><input type="radio" name="q8" value="c"> Базиліск</label>
+      </div>
+
+      <div class="question">
+        <p>9. Хто керує Дикою Охотою?</p>
+        <label><input type="radio" name="q9" value="a"> Король Дикої Охоти</label><br>
+        <label><input type="radio" name="q9" value="b"> Кейран</label><br>
+        <label><input type="radio" name="q9" value="c"> Дагон</label>
+      </div>
+
+      <div class="question">
+        <p>10. Хто з цих — морське чудовисько з щупальцями?</p>
+        <label><input type="radio" name="q10" value="a"> Кейран</label><br>
+        <label><input type="radio" name="q10" value="b"> Джінн</label><br>
+        <label><input type="radio" name="q10" value="c"> Мантикора</label>
+      </div>
+
+      <button type="button" onclick="checkAnswers()">Перевірити</button>
+    </form>
+
+    <div class="result" id="result"></div>
+  </main>
+
+  <footer>© 2025 Світ Відьмака</footer>
+
+  <script>
+    function checkAnswers() {
+      const answers = {
+        q1: 'b',
+        q2: 'c',
+        q3: 'a',
+        q4: 'a',
+        q5: 'a',
+        q6: 'a',
+        q7: 'a',
+        q8: 'a',
+        q9: 'a',
+        q10: 'a'
+      };
+      let score = 0;
+      for (let q in answers) {
+        const answer = document.querySelector(`input[name="${q}"]:checked`);
+        if (answer && answer.value === answers[q]) score++;
+      }
+      document.getElementById('result').textContent = `Ваша оцінка: ${score}/10`;
+    }
+  </script>
+</body>
+</html>
